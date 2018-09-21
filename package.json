@@ -9,17 +9,17 @@
   "author": "Anastasia Shpurik <ashpurik@salesforce.com>",
   "license": "BSD-3-Clause",
   "dependencies": {
-    "@salesforce/core": "^0.21.0",
+    "@salesforce/core": "^0.21.1",
     "express": "^4.16.3",
     "twit": "^2.2.9"
   },
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ashpurik/twitter-listener-sfdx-core.git"
+    "url": "git+https://github.com/ashpurik/hashtag-listener.git"
   },
   "bugs": {
-    "url": "https://github.com/ashpurik/twitter-listener-sfdx-core/issues"
+    "url": "https://github.com/ashpurik/hashtag-listener.git/issues"
   },
-  "homepage": "https://github.com/ashpurik/twitter-listener-sfdx-core#readme"
+  "homepage": "https://github.com/ashpurik/hashtag-listener#readme"
 }
