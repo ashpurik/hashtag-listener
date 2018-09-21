@@ -22,15 +22,15 @@ const sendPlatformEvent = async (tweet) => {
     }
 }
 
-// app.get('/', (req, res) => {
+app.get('/', (req, res) => {
 //     sendPlatformEvent({
 //         text: "Hello!",
 //         user: {
 //             screen_name: 'anastasia_dev'
 //         }
 //     })
-//     res.send('Web disabled');
-// })
+     res.send('Web disabled');
+})
 
 app.listen(port, () => console.log(`Hashtag listener app listening on port ${port}!`))
 
