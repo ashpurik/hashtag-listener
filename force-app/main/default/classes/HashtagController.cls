@@ -1,16 +1,8 @@
-public class NotificationController {
+public class HashtagController {
+    // This line must be in this exact format for the heroku app to pick it up.
+    public static string hashtag = 'SalesforceCLI';
 
-    @AuraEnabled
-    public static String getSessionId() {
-        return UserInfo.getSessionId();
-    }
-    
-    public static void publishNotifications(List<String> messages) {
-        List<Hashtag__e> notifications = new List<Hashtag__e>();
-        for (String message: messages) {
-            notifications.add(new Hashtag__e(Message__c = message));
-        }
-        
+    public static void publishHashtagEvents(List<Hashtag__e> notifications) {
         List<Database.SaveResult> results = EventBus.publish(notifications);
         
         // Inspect publishing results

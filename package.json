@@ -1,10 +1,9 @@
 {
-  "name": "twitter-listener-sfdx-core",
+  "name": "hashtag-listener",
   "version": "1.0.0",
-  "description": "Stream tweets into Salesforce as Platform Events",
-  "main": "index.js",
+  "description": "Stream hashtags from chatter and twitter to Platform Events",
   "scripts": {
-    "start": "node index"
+    "start": "node heroku-app/index"
   },
   "author": "Anastasia Shpurik <ashpurik@salesforce.com>",
   "license": "BSD-3-Clause",

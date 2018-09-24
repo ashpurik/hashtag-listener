@@ -16,7 +16,6 @@ You will need the following environment variables:
 1. __TWITTER_CONSUMER_SECRET__ -- Twitter app secret
 1. __TWITTER_ACCESS_TOKEN__ -- Twitter client token
 1. __TWITTER_ACCESS_TOKEN_SECRET__ -- Twitter client secret
-1. __TWITTER_SEARCH_STRING__ -- Search keywords, comma separated
 
 ### Node.js
 1. __NODE_ENV__ -- Use `production` for production, or `sandbox` for scratch orgs
@@ -29,7 +28,6 @@ TWITTER_CONSUMER_KEY=
 TWITTER_CONSUMER_SECRET=
 TWITTER_ACCESS_TOKEN=
 TWITTER_ACCESS_TOKEN_SECRET=
-TWITTER_SEARCH_STRING=
 NODE_ENV=
 ```
 
