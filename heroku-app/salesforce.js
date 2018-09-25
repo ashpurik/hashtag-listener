@@ -6,14 +6,18 @@ module.exports = class Salesforce extends Org {
         if (!Salesforce.org) {
             // Should be updated to use username and password
             const username = process.env.SALESFORCE_USERNAME;
-            const passcode = `${process.env.SALESFORCE_PASSWORD}${process.env.SALESFORCE_SECURITY_TOKEN}`;
-            const conn = new jsforce.Connection({});
-            const userInfo = await conn.login(username, passcode);
-            const authInfo = await AuthInfo.create(username, {
-                accessToken: conn.accessToken,
-                instanceUrl: conn.instanceUrl
-            });
-            Salesforce.org = await Org.create(await Connection.create(authInfo));
+            if (username) {
+                const passcode = `${process.env.SALESFORCE_PASSWORD}${process.env.SALESFORCE_SECURITY_TOKEN}`;
+                const conn = new jsforce.Connection({});
+                const userInfo = await conn.login(username, passcode);
+                const authInfo = await AuthInfo.create(username, {
+                    accessToken: conn.accessToken,
+                    instanceUrl: conn.instanceUrl
+                });
+                Salesforce.org = await Org.create(await Connection.create(authInfo));
+            } else {
+                Salesforce.org = await Org.create();
+            }
         }
         return Salesforce.org.getConnection();
     }

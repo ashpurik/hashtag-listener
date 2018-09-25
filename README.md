@@ -27,6 +27,10 @@ __Note:__ This app should be updated to use JWT instead of username and password
 1. __SALESFORCE_PASSWORD__ -- Salesforce password
 1. __SALESFORCE_SECURITY_TOKEN__ -- Salesforce security token
 
+On heroku, you will need to set this additional environment variable:
+
+1. __SFDX_USE_GENERIC_UNIX_KEYCHAIN__ -- Use a generic keychain
+
 ### Node.js
 1. __NODE_ENV__ -- Use `production` for production, or `sandbox` for scratch orgs
 
@@ -42,6 +46,7 @@ NODE_ENV=
 SALESFORCE_USERNAME=
 SALESFORCE_PASSWORD=
 SALESFORCE_SECURITY_TOKEN=
+SFDX_USE_GENERIC_UNIX_KEYCHAIN=true
 ```
 
 ## Dev, Build and Test
