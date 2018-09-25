@@ -9,16 +9,17 @@ function requireEnvVar(envVarName) {
     return value;
 }
 
-const consumer_key = requireEnvVar('TWITTER_CONSUMER_KEY');
-const consumer_secret = requireEnvVar('TWITTER_CONSUMER_SECRET');
-const access_token = requireEnvVar('TWITTER_ACCESS_TOKEN');
-const access_token_secret = requireEnvVar('TWITTER_ACCESS_TOKEN_SECRET');
+module.exports = () => {
+    const consumer_key = requireEnvVar('TWITTER_CONSUMER_KEY');
+    const consumer_secret = requireEnvVar('TWITTER_CONSUMER_SECRET');
+    const access_token = requireEnvVar('TWITTER_ACCESS_TOKEN');
+    const access_token_secret = requireEnvVar('TWITTER_ACCESS_TOKEN_SECRET');
 
-let twitter = new Twitter({
-    consumer_key,
-    consumer_secret,
-    access_token,
-    access_token_secret
-});
-
-module.exports = { twitter };
+    let twitter = new Twitter({
+        consumer_key,
+        consumer_secret,
+        access_token,
+        access_token_secret
+    });
+    return twitter;
+};

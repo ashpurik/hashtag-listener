@@ -7,6 +7,8 @@ and a heroku app that streams tweets with the hashtag.
 
 NOTE: This project requires a [Twitter app](https://apps.twitter.com/).
 
+If not in production mode, you can use the endpoint _http://localhost:3000/testtweet_ to send a platform event using a fake tweet.
+
 ## Configure
 
 You will need the following environment variables:
@@ -16,6 +18,14 @@ You will need the following environment variables:
 1. __TWITTER_CONSUMER_SECRET__ -- Twitter app secret
 1. __TWITTER_ACCESS_TOKEN__ -- Twitter client token
 1. __TWITTER_ACCESS_TOKEN_SECRET__ -- Twitter client secret
+
+### Salesforce
+
+__Note:__ This app should be updated to use JWT instead of username and password.
+
+1. __SALESFORCE_USERNAME__ -- Salesforce username
+1. __SALESFORCE_PASSWORD__ -- Salesforce password
+1. __SALESFORCE_SECURITY_TOKEN__ -- Salesforce security token
 
 ### Node.js
 1. __NODE_ENV__ -- Use `production` for production, or `sandbox` for scratch orgs
@@ -29,6 +39,9 @@ TWITTER_CONSUMER_SECRET=
 TWITTER_ACCESS_TOKEN=
 TWITTER_ACCESS_TOKEN_SECRET=
 NODE_ENV=
+SALESFORCE_USERNAME=
+SALESFORCE_PASSWORD=
+SALESFORCE_SECURITY_TOKEN=
 ```
 
 ## Dev, Build and Test
@@ -38,7 +51,8 @@ NODE_ENV=
 1. Type `npm install`
 1. Authenticate to a Salesforce org: `sfdx force:auth:web:login`
 1. [Optional] Set this org as the default: `sfdx force:config:set defaultusername=<your username> --global`
-1. Deploy the app into the org: `sfdx force:source:deploy -p force-app`
+1. Deploy the force app into the org: `sfdx force:source:deploy -p force-app`
+1. Deploy the heroku app into heroku: `git push heroku master`
 
 ## Resources
 
