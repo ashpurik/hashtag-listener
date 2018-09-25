@@ -16,7 +16,7 @@ const port = process.env.PORT || 3000;
 let track;
 
 try {
-    // Pull the hashtag from apex
+    // Pull the hashtag from apex, so it is only specified in one place.
     const hashtagController = fs.readFileSync(`${__dirname}/../force-app/main/default/classes/HashtagController.cls`).toString();
     track = hashtagController.match(/public static string hashtag = '(\w+)';/)[1].split(',');
     console.log(`Using hashtag #${track}!`)

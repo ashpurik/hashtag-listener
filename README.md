@@ -2,8 +2,7 @@
 
 The hashtag listener streams messages into Salesforce via Platform Events whenever the hashtag 'SalesforceCLI' is detected, whether on Twitter or Chatter Posts.
 
-This repo consists of a Force.com app that performs the Chatter reporting of the hashtag, or Topic,
-and a heroku app that streams tweets with the hashtag.
+This repo consists of a Force.com app that performs the Chatter reporting of the hashtag, or Topic, and a heroku app that streams tweets with the hashtag.
 
 NOTE: This project requires a [Twitter app](https://apps.twitter.com/).
 
@@ -27,10 +26,6 @@ __Note:__ This app should be updated to use JWT instead of username and password
 1. __SALESFORCE_PASSWORD__ -- Salesforce password
 1. __SALESFORCE_SECURITY_TOKEN__ -- Salesforce security token
 
-On heroku, you will need to set this additional environment variable:
-
-1. __SFDX_USE_GENERIC_UNIX_KEYCHAIN__ -- Use a generic keychain
-
 ### Node.js
 1. __NODE_ENV__ -- Use `production` for production, or `sandbox` for scratch orgs
 
@@ -46,7 +41,6 @@ NODE_ENV=
 SALESFORCE_USERNAME=
 SALESFORCE_PASSWORD=
 SALESFORCE_SECURITY_TOKEN=
-SFDX_USE_GENERIC_UNIX_KEYCHAIN=true
 ```
 
 ## Dev, Build and Test
@@ -57,7 +51,7 @@ SFDX_USE_GENERIC_UNIX_KEYCHAIN=true
 1. Authenticate to a Salesforce org: `sfdx force:auth:web:login`
 1. [Optional] Set this org as the default: `sfdx force:config:set defaultusername=<your username> --global`
 1. Deploy the force app into the org: `sfdx force:source:deploy -p force-app`
-1. Deploy the heroku app into heroku: `git push heroku master`
+1. Deploy the heroku app into heroku (after creating a heroku app and setting the remote): `git push heroku master`
 
 ## Resources
 
